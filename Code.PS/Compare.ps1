@@ -2,18 +2,18 @@
 # Compare.ps1
 #
 
-# ±È½ÏÁ½¸öÎÄ¼ş£¬±ØĞëÁ½¸ö²ÎÊı
+# æ¯”è¾ƒä¸¤ä¸ªæ–‡ä»¶ï¼Œå¿…é¡»ä¸¤ä¸ªå‚æ•°
 Function CompareFile{
 	$newfile = $args[0];
 	$oldfile = $args[1];
-	if($newfile.Length -ne $oldfile.Lenght){
+	if($newfile.Length -ne $oldfile.Length){
 		return false;
 	}
     return true;	
 }
 
 
-# ±È½ÏÁ½¸öÎÄ¼ş¼Ğ£¬±ØĞëÁ½¸ö²ÎÊı
+# æ¯”è¾ƒä¸¤ä¸ªæ–‡ä»¶å¤¹ï¼Œå¿…é¡»ä¸¤ä¸ªå‚æ•°
 Function CompareFolder{
 
 	$newfolder = $args[0];
