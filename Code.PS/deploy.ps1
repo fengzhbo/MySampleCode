@@ -136,8 +136,13 @@ Function CreateDeploy{
 
 		$desFolder = $deployFolder;
 
-		if($_.DirectoryName -ne $newFolder){
-			$desFolder = $_.DirectoryName.replace($newFolder,$deployFolder);
+		$ownerFolder = $_.Parent.FullName;
+		if($_ -isnot [IO.DirectoryInfo]){
+			$ownerFolder = $_.DirectoryName;
+		}
+
+		if($ownerFolder -ne $newFolder){
+			$desFolder = $ownerFolder.replace($newFolder,$deployFolder);
 
 			if(!(Test-Path $desFolder)){
 				New-Item $desFolder -itemtype directory
@@ -158,4 +163,5 @@ $deployfolder = "C:\Users\fengzhbo\Desktop\deploy";
 
 # 执行
 $result = CompareFolder $newfolder $oldfolder
+$result
 CreateDeploy $result $newfolder $deployfolder
