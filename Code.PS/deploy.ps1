@@ -205,14 +205,14 @@ Function RenameFolder{
 
 Function Execute{
     
-    # 配置参数1：新的目录文件，更新包的文件复制来头
-    $newfolder = "E:\MSM\Release";
+    # 配置参数1：新的目录文件，更新包的文件复制来源
+    $newfolder = "$PSScriptRoot\Release";
     # 配置参数2：老的目录文件，新与旧比较，取出有变化的文件列表
-    $oldfolder = "E:\MSM\Release1";
+    $oldfolder = "$PSScriptRoot\Release1";
     # 配置参数3：更新的文件复制目的地
-    $deployfolder = "E:\MSM\deploy";
+    $deployfolder = "$PSScriptRoot\deploy";
     # 配置参数4：备份会被覆盖的文件
-    $bakfolder = "E:\MSM\bak";
+    $bakfolder = "$PSScriptRoot\bak";
 
     # 执行
     $result = CompareFolder $newfolder $oldfolder
